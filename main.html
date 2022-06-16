@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<style>
+form{
+    margin:auto;
+    width:40%;
+}
+
+.result{
+    margin:auto;
+    width:35%;
+    border:1px, solid, #ccc;
+}
+</style>
+
+<head>
+    <title>Прогнозное значение прочности при растяжении</title>
+</head>
+
+<form action="{{url_for('main')}}" method="POST">
+    <fieldset>
+        <legend>Введите значение</legend>
+        Количество отвердителя, от 30 до 85 %
+        <input name="Количество отвердителя. м.%" type="number"
+        required>
+        <br>
+        <br>
+        <br>
+        <input type="submit">
+    </fieldset>
+</form>
+
+<div class="result" align="middle">
+    {%if result%}
+        <br>
+        <p style = "font-size: 45px">
+        Прочность при растяжении
+        </p>
+        <p style = "font-size: 45px">{{result}}</p>
+    {% endif %}
+</div>
